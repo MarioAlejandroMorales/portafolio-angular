@@ -30,7 +30,7 @@ export class InfoPaginasService {
     this.http.get('https://angular-html-b3716.firebaseio.com/equipo.json')
       .subscribe((resp: any[]) => {
         this.equipo = resp;
-        console.log(this.equipo);
+        // console.log(this .equipo);
       });
   }
 
