@@ -7,14 +7,16 @@ import { Producto } from '../interface/producto.interface';
 })
 export class ProductosService {
   cargando = true;
+  productos: Producto[] = [];
   constructor(private http: HttpClient) {
     this.cargarProductos();
   }
 
-  private cargarProductos(){
+  private cargarProductos() {
     this.http.get('https://angular-html-b3716.firebaseio.com/productos_idx.json')
-    .subscribe((resp: Producto) => {
+    .subscribe((resp: Producto[]) => {
       console.log(resp);
+      this.productos = resp;
       this.cargando = false;
     });
   }
