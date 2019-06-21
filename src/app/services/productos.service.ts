@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Producto } from '../interface/producto.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class ProductosService {
 
   private cargarProductos(){
     this.http.get('https://angular-html-b3716.firebaseio.com/productos_idx.json')
-    .subscribe(resp => {
+    .subscribe((resp: Producto) => {
       console.log(resp);
       this.cargando = false;
     });
