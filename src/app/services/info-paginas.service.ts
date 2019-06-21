@@ -15,7 +15,7 @@ export class InfoPaginasService {
   }
 
   private cargarInfo() {
-    console.log('Servicio infoPaginaService');
+    // console.log('Servicio infoPaginaService');
 
     this.http.get('assets/data/data-pagina.json')
       .subscribe(resp => {
